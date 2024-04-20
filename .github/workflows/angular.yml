@@ -2,7 +2,6 @@
 
 steps:
   - name: run test and build angular app
-    id: angular_build
     run: |
       ng test --watch=false
       ng build
