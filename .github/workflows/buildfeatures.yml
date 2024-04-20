@@ -19,7 +19,7 @@ jobs:
         run: bash bash/functions.sh
     
       - name: setup node 18
-        uses: action/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
       
