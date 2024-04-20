@@ -18,13 +18,13 @@ jobs:
       - name: Pull and checkout from git repository
         run: bash bash/functions.sh
     
-    - name: setup node 18
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: setup node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
         
-    - name: run test and build angular app
-      run: |
-       ng test --match=false
-       ng build --prod
-       echo "run test and build angular app"
+      - name: run test and build angular app
+        run: |
+          ng test --match=false
+          ng build --prod
+          echo "run test and build angular app"
