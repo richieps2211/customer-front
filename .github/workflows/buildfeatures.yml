@@ -28,6 +28,8 @@ jobs:
       - name: install latest angular version
         run: npm install -g @angular/cli@latest
 
-      - name: Run common steps
+      - name: execute pruebar
         run: |
-          pwd
+          ng test --watch=false
+          ng build
+          echo "Ejecutar pruebas y construir aplicación Angular"
