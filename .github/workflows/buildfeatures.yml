@@ -18,10 +18,11 @@ jobs:
       - name: Pull and checkout from git repository
         run: bash bash/functions.sh
     
-      - name: setup node 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: install npm package
+        run: npm install
+
+      - name: install latest angular version
+        run: npm install -g @angular/cli@latest
         
       - name: run test and build angular app
         run: |
