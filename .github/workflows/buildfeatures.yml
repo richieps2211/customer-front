@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-feature:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -30,8 +30,4 @@ jobs:
 
       - name: Run common steps
         run: |
-          cat ./.github/workflows/build_angular.yml >> workflow_steps.yml
-          echo "End of common steps"
-      - name: Run included steps
-        run: |
-          source workflow_steps.yml
+          ls
