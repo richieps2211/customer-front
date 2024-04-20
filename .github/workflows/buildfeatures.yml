@@ -6,7 +6,7 @@ name: Build features
 on:
   push:
     branches:
-      - 'develop'
+      - develop
 
 jobs:
   build-feature:
