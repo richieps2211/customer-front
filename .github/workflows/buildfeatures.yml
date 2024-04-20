@@ -29,4 +29,4 @@ jobs:
       - name: install latest angular version
         run: npm install -g @angular/cli@latest
         
-      - uses: ./.github/workflows/angular.yml
+      - extends: ./.github/workflows/build_angular.yml
