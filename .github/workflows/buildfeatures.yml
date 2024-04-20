@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-feature:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -18,6 +18,11 @@ jobs:
       - name: Pull and checkout from git repository
         run: bash bash/functions.sh
     
+      - name: setup node 18
+        uses: action/setup-node@v3
+        with:
+          node-version: '18'
+      
       - name: install npm package
         run: npm install
 
@@ -27,5 +32,5 @@ jobs:
       - name: run test and build angular app
         run: |
           ng test --match=false
-          ng build --prod
+          ng build
           echo "run test and build angular app"
