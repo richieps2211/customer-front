@@ -1,5 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+# main.yml
 
 name: Build features
 
@@ -28,5 +27,11 @@ jobs:
 
       - name: install latest angular version
         run: npm install -g @angular/cli@latest
-        
-      - extends: ./.github/workflows/build_angular.yml
+
+      - name: Run common steps
+        run: |
+          cat ./.github/workflows/build_angular.yml >> workflow_steps.yml
+          echo "End of common steps"
+      - name: Run included steps
+        run: |
+          source workflow_steps.yml
