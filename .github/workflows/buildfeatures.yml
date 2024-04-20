@@ -29,8 +29,4 @@ jobs:
       - name: install latest angular version
         run: npm install -g @angular/cli@latest
         
-      - name: run test and build angular app
-        run: |
-          ng test --match=false
-          ng build
-          echo "run test and build angular app"
+      - uses: ./.github/workflows/angular.yml#angular_build
